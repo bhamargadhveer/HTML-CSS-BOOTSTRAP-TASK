@@ -5,6 +5,9 @@
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
 }
+html {
+  scroll-behavior: smooth;
+}
 
 /* <!-- header styles --> */
 
@@ -16,165 +19,85 @@
     height: 100vh;
     background-color: black;
 }
-#btn {
-    transition: all 0.3s ease;
-    background-color: rgb(214, 20, 20);
-    border: 5px solid black;
-    font-weight: 700;
-    color: black;
+#btn{
+  background-color: #cb0707;
+  font-weight: 600;
+  color: black;
+  transition: all 0.3s ease;
+  border: 10px solid black;
 }
 #btn:hover {
-    background-color: whitesmoke;
-    color: black;
-}  
-.red{
-    color: rgb(214, 20, 20);
+  background-color: rgb(179, 153, 153);
 }
 
-  /* <!-- section 1 styles --> */
-
-.animated-card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .animated-card:hover {
-    transform: translateY(-15px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  }
-
-  .animated-card:hover::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background: linear-gradient(45deg, rgba(255, 0, 0, 0.2), rgba(255, 255, 255, 0.1));
-    opacity: 0.5;
-    animation: shine 1s linear infinite;
-  }
-
-  @keyframes shine {
-    from {
-      transform: translateX(-100%);
-    }
-    to {
-      transform: translateX(100%);
-    }
-  }
-  
-  .phone-icon, .email-icon, .whatsapp-icon {
-    transition: transform 0.3s ease, background-color 0.3s ease;
-  }
-  
-  .animated-card:hover .phone-icon {
-    transform: rotate(20deg);
-    background-color: #ff4d4d;
-  }
-  
-  .animated-card:hover .email-icon {
-    transform: scale(1.2);
-    background-color: #ff4d4d;
-  }
-  
-  .animated-card:hover .whatsapp-icon {
-    transform: rotate(-20deg);
-    background-color: #ff4d4d;
-  }
-  
-.card:hover {
-    box-shadow: 2 9px 15px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease-in-out;
-    cursor: pointer;
-    background-color: #C53A49;
-    color: whitesmoke;
-  }
- 
-.animated-card {
-    transform: translateY(20px);
-    opacity: 0;
-    transition: transform 0.4s ease, opacity 0.4s ease;
-    animation: fadeInUp 0.8s ease forwards;
-  }
-
-  @keyframes fadeInUp {
-    0% {
-      transform: translateY(20px);
-      opacity: 0;
-    }
-    100% {
-      transform: translateY(0);
-      opacity: 1;
-    }
-  }
-
+.text-color{
+  color: #f11111;
+}
+.header-para{
+  font-size: 14px;  
+} 
   /* for larger screens  */
 
   @media (min-width: 992px) {
     #btn{
       position: relative;
-      top: -70px;
+      top: -90px;
     }
-    .main{
-        position: relative;
-        top: -230px;
-    }
-    #typing-text {
-        overflow: hidden;
-        white-space: nowrap;
-        border-right: 2px solid #000;
-        animation: typing 3s steps(50), blink 0.5s step-end infinite;
-      }
-      
-      @keyframes typing {
-        from {
-          width: 0;
-        }
-        to {
-          width: 100%;
-        }
-      }
+    .header-para{
+      width: 600px;
+    } 
       
 }
+
+ /* main  */
+
+ @media (min-width: 992px) {
+  .main{
+      position: relative;
+      top: -200px;
+  }
+}
+
+  /* section 1 styles  */
+
+.card{
+  cursor: pointer;
+  box-shadow: 0 5px 5px rgba(125, 33, 33, 0.331);
+}
+
+.card p{
+  font-size: 14px;    
+}
+.card a{
+  color: #f11111;
+  font-size: 14px;
+}
+.card:hover {
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  background-color: #C53A49;
+  color: whitesmoke;
+  transform: translateY(-5px);
+  box-shadow: 0 8px 10px rgba(240, 3, 3, 0.783);
+}
+.card:hover a{
+  color: whitesmoke;
+}
+.animated-card:hover i {
+  transform: rotate(20deg);
+  color: whitesmoke;
+}
+.animated-card i {
+  transition: transform 0.5s ease;
+  color: red;
+}
+
 
 /* section 2 styles */
 
 .worker-section{
     background: url('./assets/img.png') no-repeat center right/contain;
 }
-
-  /* section 3 styles */
-
-  .animated-card:hover {
-    transform: scale(1.1);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0px 2px 5px 5px rgb(86, 77, 77);
-  }
-
-  .animated-card:hover i {
-    transform: rotate(360deg);
-    transition: transform 0.5s ease;
-    color: whitesmoke;
-  }
-
-  .animated-card:hover p {
-    transition: color 0.3s ease;
-  }
-
-  .animated-card {
-    background: white;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-  }
-
-  .animated-card i {
-    transition: transform 0.5s ease;
-    color: red;
-  }
-
 
 /* <!-- section 7 --> */
 
@@ -185,40 +108,5 @@
     background-color: black;
 }
 
-.footer-card {
-    overflow: hidden;
-    transition: transform 0.3s, box-shadow 0.3s;
-    position: relative;
-}
 
-.footer-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 15px rgba(255, 0, 0, 0.2);
-}
-
-.footer-card .card-body {
-    position: relative;
-    transition: transform 0.3s;
-}
-
-.footer-card:hover .card-body {
-    transform: scale(1.05);
-}
-
-.footer-card i {
-    transition: color 0.3s, transform 0.3s;
-}
-
-.footer-card:hover i {
-    color: white;
-    transform: rotate(15deg);
-}
-
-.card-title {
-    font-size: 1rem;
-}
-
-.card-body p {
-    font-size: 0.85rem;
-}
 
